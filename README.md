@@ -13,6 +13,7 @@ This project is a web-based 3D playground that visualizes LIDAR sensors, steerin
 
 ## How to Run Locally
 1. Repo link - <https://github.com/Mohan-1202/Self-Driving-simulation.git>.
+  
    Direct Link - https://mohan-1202.github.io/Self-Driving-simulation/
    
 2. Navigate to the project directory.
@@ -20,8 +21,13 @@ This project is a web-based 3D playground that visualizes LIDAR sensors, steerin
    *   Note: While it works directly, running via a local server (e.g., `python -m http.server`) is recommended for best performance.
 
 ## Demo
-*(Add screenshots or video link here)*
+<img width="1251" height="816" alt="image" src="https://github.com/user-attachments/assets/ca8ecc36-0fdf-49ff-90cf-f95a7244eb29" />
+
+<img width="1918" height="908" alt="image" src="https://github.com/user-attachments/assets/cc85778a-46e2-4a11-b67f-48460ba34b25" />
+
+
 
 ## Team
+- Ctrl+We
 - SyncPair
 
