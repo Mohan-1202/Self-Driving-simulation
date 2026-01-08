@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Self-Driving Car Physics Playground (3D)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Intro Modal -->
+  <div id="introModal" class="modal-overlay">
+    <div class="modal-content">
+      <header>
+        <h2>SimVerse 2025</h2>
+        <h1>Self-Driving Playground</h1>
+      </header>
+
+      <div class="modal-body">
+        <div class="feature-box">
+          <div class="icon">📡</div>
+          <h3>LIDAR Sensors</h3>
+          <p>Raycasting algorithms detect obstacles and calculate distance in real-time.</p>
+        </div>
+        <div class="feature-box">
+          <div class="icon">🧠</div>
+          <h3>Autonomous Logic</h3>
+          <p>Steering feedback loop avoids potential collisions and targets the goal.</p>
+        </div>
+        <div class="feature-box">
+          <div class="icon">🚘</div>
+          <h3>Physics Engine</h3>
+          <p>Simulated friction, acceleration, and braking dynamics.</p>
+        </div>
+      </div>
+
+      <div class="modal-controls">
+        <p><strong>Manual Control:</strong> WASD</p>
+        <button id="modalStartBtn" class="glow-btn">Initialize Simulation</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app">
+    <header class="header">
+      <h1>Self-Driving Car Physics Playground</h1>
+      <p class="subtitle">
+        Explore how speed, braking, and simple sensors affect a car reaching its target without collisions.
+      </p>
+    </header>
+
+    <main class="main">
+      <section class="canvas-panel">
+        <div id="threeRoot" class="three-root"></div>
+      </section>
+
+      <section class="control-panel">
+        <div class="controls-group">
+          <h2>Simulation Controls</h2>
+          <div class="controls-row">
+            <button id="btnStart">Start</button>
+            <button id="btnPause">Pause</button>
+            <button id="btnReset">Reset</button>
+          </div>
+          <div class="controls-row mode-row">
+            <label>
+              <input type="radio" name="mode" value="auto" checked />
+              Auto‑drive
+            </label>
+            <label>
+              <input type="radio" name="mode" value="manual" />
+              Manual (keyboard)
+            </label>
+          </div>
+        </div>
+
+        <div class="controls-group">
+          <h2>Car Parameters</h2>
+          <div class="slider-row">
+            <label for="maxSpeed">Max Speed</label>
+            <input id="maxSpeed" type="range" min="50" max="250" value="150" />
+            <span id="maxSpeedVal">150</span>
+          </div>
+          <div class="slider-row">
+            <label for="brakeStrength">Brake Strength</label>
+            <input id="brakeStrength" type="range" min="100" max="600" value="350" />
+            <span id="brakeStrengthVal">350</span>
+          </div>
+          <div class="slider-row">
+            <label for="sensorRange">Sensor Range</label>
+            <input id="sensorRange" type="range" min="80" max="300" value="180" />
+            <span id="sensorRangeVal">180</span>
+          </div>
+        </div>
+
+        <div class="controls-group">
+          <h2>Metrics</h2>
+          <ul class="metrics">
+            <li><strong>Time:</strong> <span id="metricTime">0.0</span> s</li>
+            <li><strong>Collisions:</strong> <span id="metricCollisions">0</span></li>
+            <li><strong>Distance to Target:</strong> <span id="metricDistance">0</span> m</li>
+            <li><strong>Status:</strong> <span id="metricStatus">Ready</span></li>
+          </ul>
+        </div>
+
+        <div class="hint">
+          <p>
+            In <strong>manual mode</strong>, use <strong>W / S</strong> to accelerate/brake and
+            <strong>A / D</strong> to steer.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built for <strong>SimVerse</strong> – a 24‑hour hackathon celebrating interactive simulations
+        across science and engineering.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Three.js (non-module) so it works when opened from file:// as well -->
+  <!-- Three.js (non-module) so it works when opened from file:// as well -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="main3d.js"></script>
+</body>
+
+</html>
