@@ -12,7 +12,9 @@ This project is a web-based 3D playground that visualizes LIDAR sensors, steerin
 - Web Audio API (Sound synthesis)
 
 ## How to Run Locally
-1. Clone the repository.
+1. Repo link - <https://github.com/Mohan-1202/Self-Driving-simulation.git>.
+   Direct Link - https://mohan-1202.github.io/Self-Driving-simulation/
+   
 2. Navigate to the project directory.
 3. Open `index.html` in any modern web browser.
    *   Note: While it works directly, running via a local server (e.g., `python -m http.server`) is recommended for best performance.
@@ -21,4 +23,5 @@ This project is a web-based 3D playground that visualizes LIDAR sensors, steerin
 *(Add screenshots or video link here)*
 
 ## Team
-- [Your Name]
+- SyncPair
+
